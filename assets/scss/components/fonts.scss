@@ -1,0 +1,19 @@
+@font-face {
+  @include add-font("Lato-Bold/Lato-Bold", "Lato", 600);
+}
+
+@font-face {
+  @include add-font("Lato-Heavy/Lato-Heavy", "Lato", 900);
+}
+
+@font-face {
+  @include add-font("Lato-Medium/Lato-Medium", "Lato", 500);
+}
+
+@font-face {
+  @include add-font("Lato-Regular/Lato-Regular", "Lato", 400);
+}
+
+@font-face {
+  @include add-font("icons/icons", "icons");
+}
