@@ -429,7 +429,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 4em 1em 1em 1em;
 
   @include media-breakpoint(768px) {
     padding: 3.37em 4.7em 2.4em 4.8em;
@@ -442,17 +442,43 @@ footer {
 
 .footer-top {
   display: flex;
-  justify-content: space-between;
-  padding-bottom: 90px;
+  flex-direction: column;
+  /*  padding-bottom: 90px; */
+  padding-bottom: 3em;
   border-bottom: 2px solid $lineColor;
-  div {
-    max-width: 25%;
+  align-items: center;
+  gap: 3em;
+  width: 100%;
+
+  @include media-breakpoint(428px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+    align-items: center;
     p {
       color: $FooterFontColor;
     }
     form {
       display: flex;
       flex-direction: column;
+    }
+    @include media-breakpoint(428px) {
+      width: calc(100% / 2 - 3em);
+      align-items: start;
+    }
+
+    @include media-breakpoint(768px) {
+      width: calc(100% / 3 - 3em);
+    }
+    @include media-breakpoint(1200px) {
+      width: calc(100% / 4 - 3em);
     }
   }
   input {
@@ -464,14 +490,23 @@ footer {
     color: #fff;
     padding: 0 10px;
   }
+
+  @include media-breakpoint(768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
-.contact-form {
+div .contact-form {
   display: flex;
   flex-direction: column;
   /* max-width: 100%; */
   /*  gap: 2.267em; */
+
+  /* @include media-breakpoint(768px) {
+    width: 100%;
+  } */
+  max-width: 90%;
   div {
-    max-width: 100%;
   }
 
   form {
@@ -481,12 +516,14 @@ footer {
   }
 }
 .social-buttons {
-  margin-top: 96px;
+  /*  margin-top: 96px; */
+  margin-top: 3em;
   @extend .list-unstyled;
   display: flex;
-  li {
+  gap: 2.133em;
+  /*  li {
     padding-left: 32px;
-  }
+  } */
   a {
     &:any-link {
       text-decoration: none;
@@ -502,22 +539,37 @@ footer {
 
 #submit {
   @extend .buy-now;
-  width: 50%;
+  width: 100%;
   text-align: center;
+  font-size: 1em;
 }
 
 .quick-links {
   color: $accentFontLight;
+  display: flex;
+  flex-direction: column;
+  gap: 1.333em;
+  font-size: 0.933em;
+  @include media-breakpoint(992px) {
+    gap: 1.733em;
+    font-size: 1em;
+  }
+
   li {
     list-style-type: none;
-    padding-top: 26px;
+    /*  padding-top: 26px; */
     &:first-child {
       padding-top: 0;
     }
     a {
+      transition: all 0.5s ease-in-out;
       &:any-link {
         color: $accentFontLight;
         text-decoration: none;
+      }
+
+      &:hover {
+        color: pink;
       }
     }
   }
