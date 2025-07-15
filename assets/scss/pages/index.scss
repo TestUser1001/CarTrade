@@ -164,8 +164,14 @@ header {
 .row {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   background-color: #303030;
+
   /*   flex-direction: column; */
+
+  @include media-breakpoint(768px) {
+    flex-direction: row;
+  }
 }
 
 .item {
@@ -176,12 +182,22 @@ header {
   min-height: 408px;
   background-color: #303030;
   align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #fff;
   cursor: pointer;
   a {
     text-decoration: none;
   }
   &:hover {
     background-color: rgba(30, 30, 30, 0.7);
+  }
+
+  @include media-breakpoint(768px) {
+    border: none;
+  }
+
+  @include media-breakpoint(992px) {
+    /* align-items: center; */
   }
 }
 
@@ -202,19 +218,40 @@ header {
 }
 .content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   line-height: 1;
-  padding-left: 51px;
+  gap: 2rem;
+  align-items: center;
 
   p {
     color: #979696;
-    font-size: 1.333em;
+    font-size: 1em;
     font-weight: 500;
+
+    @include media-breakpoint(576px) {
+      font-size: 1.333em;
+    }
   }
   img {
-    width: 100%;
-    height: auto;
+    width: 50%;
+    height: 50%;
+    align-self: center;
+    @include media-breakpoint(992px) {
+      width: 100%;
+      height: auto;
+    }
   }
+
+  @include media-breakpoint(992px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 3.4em;
+  }
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .description {
@@ -380,8 +417,8 @@ header {
 
 .buy-now {
   font: inherit;
-  margin-top: 30px;
-  padding: 13px 44px 10px 44px;
+  /* margin-top: 30px; */
+  padding: 13px 44px /* 10px 44px */;
   font-size: 1.3333em;
   border-radius: 20px;
   line-height: 1;
@@ -438,8 +475,15 @@ footer {
   display: flex;
   flex-direction: column;
   /* max-width: 100%; */
+  /*  gap: 2.267em; */
   div {
     max-width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.267em;
   }
 }
 .social-buttons {
