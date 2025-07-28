@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="./assets/js/functions.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -61,16 +62,24 @@
         </div>
       </div>
 
-      <nav>
-        <div class="container">
-          <ul>
-            <li><a href="#!">Home</a></li>
-            <li><a href="#!">Services</a></li>
-            <li><a href="#!">About</a></li>
-            <li><a href="#!">Reviews</a></li>
-            <li><a href="#!">Locations</a></li>
-            <li><a href="#!">Contacts</a></li>
-          </ul>
+      <nav class="main-nav">
+        <div id="navContainer">
+          <div class="main-nav__wrapper">
+            <ul class="main-nav__list" id="mainNav">
+              <li><a href="#!">Home</a></li>
+              <li><a href="#!">Services</a></li>
+              <li><a href="#!">About</a></li>
+              <li><a href="#!">Reviews</a></li>
+              <li><a href="#!">Locations</a></li>
+              <li><a href="#!">Contacts</a></li>
+            </ul>
+            <img
+              src="assets/img/Menu.png"
+              alt="mobile-menu-img"
+              class="main-nav__menu-img"
+              id="menuImg"
+            />
+          </div>
         </div>
       </nav>
     </header>
