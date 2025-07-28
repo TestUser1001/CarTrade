@@ -26,7 +26,6 @@ header {
 //|| TOP NAVIGATION
 .top-nav {
   display: flex;
-  /*  justify-content: flex-end;  temporary remove rule*/
   justify-content: center;
   align-items: center;
   padding-bottom: 0.5em;
@@ -41,7 +40,6 @@ header {
 
   li {
     display: inline-block;
-    /*  padding: 16px 20px 18px 20px; */
     padding: 0.53333em 0.6666em 0.6em 0.6666em;
 
     @include media-breakpoint(768px) {
@@ -65,6 +63,9 @@ header {
       color: $accentFontLight;
       font-size: 0.93em;
       font-weight: 400;
+
+      @include transitions;
+
       :hover {
         color: rgba($color: $accentFontLight, $alpha: 0.6);
       }
@@ -73,6 +74,11 @@ header {
   .search-icon {
     color: #fff;
     padding: 18px;
+    @include transitions;
+
+    &:hover {
+      color: $lineColor;
+    }
   } //top-navigation
 }
 
@@ -84,10 +90,6 @@ header {
   align-items: center;
   margin-top: 1em;
   margin-bottom: 1.53em;
-
-  /* @include media-breakpoint(576px) {
-    align-items: start;
-  } */
 
   @include media-breakpoint(768px) {
     flex-direction: row;
@@ -127,7 +129,6 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* align-self: start; */
   gap: 1.2em;
 
   @include media-breakpoint(768px) {
@@ -185,11 +186,17 @@ header {
     padding: 0 1em;
     border-left: 2px solid $lineColor;
     font-size: 0.8em;
+    @include transitions;
+
+    &:hover {
+      background-color: $cardsHover;
+    }
 
     @include media-breakpoint(992px) {
       font-size: 1em;
       padding: 0 1.666em;
     }
+
     a {
       display: block;
       font-weight: 600;
@@ -207,8 +214,6 @@ header {
 
 .main-nav {
   position: relative;
-  /*   display: flex;
-  justify-content: end; */
 
   &__wrapper {
     display: flex;
@@ -223,12 +228,19 @@ header {
     flex-direction: column;
     opacity: 0;
     transform: translateX(-20px);
-    transition: transform 0.6s ease-in-out;
 
     @include media-breakpoint(768px) {
       position: relative;
       opacity: 1;
       flex-direction: row;
+    }
+
+    a {
+      @include transitions;
+      &:hover {
+        transform: scale(1.1);
+        color: $linksHover;
+      }
     }
   }
 
@@ -249,10 +261,6 @@ header {
       display: none;
     }
   }
-
-  /*  &__visible {
-    opacity: 0;
-  } */
 }
 
 .container-mobile {
@@ -430,6 +438,10 @@ header {
   padding: 35px 30px;
   min-height: 18.75em;
   gap: 1em;
+  @include transitions;
+  &:hover {
+    background-color: darken(#363636, 0.95);
+  }
 
   @include media-breakpoint(576px) {
     width: 70%;
@@ -550,7 +562,7 @@ header {
   cursor: pointer;
   &:hover {
     background-color: lighten($accentFontDark, 15%);
-    transition: all 0.3s ease-in-out;
+    @include transitions;
   }
   &:focus {
     outline: none;
@@ -651,7 +663,7 @@ div .contact-form {
       text-decoration: none;
       color: #fff;
       font-size: 25px;
-      transition: all 0.3s ease-in-out;
+      @include transitions;
     }
     &:hover {
       color: lighten(#000, 70%);
@@ -683,7 +695,7 @@ div .contact-form {
       padding-top: 0;
     }
     a {
-      transition: all 0.5s ease-in-out;
+      @include transitions;
       &:any-link {
         color: $accentFontLight;
         text-decoration: none;
